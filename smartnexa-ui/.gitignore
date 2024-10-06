@@ -1,0 +1,33 @@
+# Node modules
+/node_modules
+
+# Logs
+*.log
+
+# Output directory
+/dist
+
+# Vite cache
+/.vite
+
+# @vitejs/vite temporary directory
+/.vit
+
+# Generated files
+stats.html
+
+# ESLint cache
+/.eslintcache
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Miscellaneous
+.DS_Store
+*.tgz
