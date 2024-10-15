@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar-container{
+    display : flex;
+    justify-content : space-between;
+    align-items:center;    
+    height:4.6rem;
+    padding:0 4rem;      
+    background-color:white;
+    color:black;
+    box-shadow: 0 0 6px #20212426;
+}
+
+.brand-name{
+    font-size: 1.5rem;
+    /* margin-top: -8px; */
+}
+
+.links{
+    display : flex;
+    list-style-type : none;
+    gap:3rem;
+}
+
+.links li{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(105, 105, 105);
+}
+
+.links li:hover{
+    color: rgb(15, 15, 15);
+}
+
+.dropdown-container{
+    display: flex;
+
+}
+
+.icon-container{
+    display: flex;
+    gap: 1.4rem;
+}
