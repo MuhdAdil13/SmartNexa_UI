@@ -1,15 +1,17 @@
 import React from 'react'
-import "./Dashboard.css"
+import "./SidebarMenu.css"
+import DashIcon from "./icons/dashboard.svg"
 
-const Dashboard = () => {
-    return (
+const SidebarMenu = () => {
+    return(
         <>
             <div className="container">
-                <div className="left-nav-section">
+                <nav className="sidebar">
                     <div className="brand-name">SmartNexa</div>
                     <div className="menu-section">
                         <div className="menu-links">
                             <h5 className='menu-'>MENU</h5>
+                            <img src={DashIcon} alt="Dashboard Icon"  width={21} height={21}/>
                             <a href="" className="">Dashboard</a>
                             <a href="" className="">Manage Products</a>
                             <a href="" className="">Manage Orders</a>
@@ -25,10 +27,10 @@ const Dashboard = () => {
                             <a href="" className=''>Logout</a>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
-        </>     
-    );
+        </>
+    )
 };
 
-export default Dashboard;
+export default SidebarMenu
