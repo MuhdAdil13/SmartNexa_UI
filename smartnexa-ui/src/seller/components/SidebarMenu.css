@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    box-shadow: 0 0 6px #20212426;
+}
+
+.brand-name{
+    padding-top: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 250px;
+    position: fixed !important;
+    align-items: start;
+    padding:0 2rem;
+    gap: 2.5rem;
+    background-color: rgb(245, 245, 247);
+    border-right: 1px solid #E5E7EB;;
+    color: #4A5568 ;
+}
+
+.menu-section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+}
+
+
+.menu-links{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.account-links{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+a {
+    text-decoration: none;
+    color: #4A5568;
+      /* Add some spacing between links */
+}
+
+.menu-links h5 , .account-links h5{
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.icon-box{
+    display: flex;
+    height: 1rem;
+    gap: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.profile-card{
+    margin-top: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the space between items as needed */
+}
+
+.img-box{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.img-box img{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 100px;
+    padding: auto;
+}
+
+.details .name{
+    color: black;
+}
+
+.details .email{
+    font-size: 14px;
+}
+
+.profile-card .icon{
+    display: flex;
+    align-items: center;
+    height: 65px;
+}

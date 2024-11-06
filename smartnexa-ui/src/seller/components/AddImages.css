@@ -1,0 +1,60 @@
+  
+.upload-box {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100px;
+height: 100px;
+border: 2px dashed #cccccc;
+cursor: pointer;
+text-align: center;
+}
+
+.upload-box span {
+color: #007bff;
+font-size: 14px;
+}
+
+.image-thumbnails {
+display: flex;
+gap: 10px;
+}
+
+.thumbnail {
+position: relative;
+width: 100px;
+height: 100px;
+}
+
+.thumbnail img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.5);
+border-radius: 8px;
+}
+
+.thumbnail:hover .overlay {
+display: flex;
+}
+
+.overlay button {
+background-color: #ffffff;
+border: none;
+margin: 5px;
+padding: 5px 10px;
+cursor: pointer;
+}
