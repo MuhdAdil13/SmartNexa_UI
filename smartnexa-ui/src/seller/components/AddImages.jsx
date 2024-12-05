@@ -1,53 +1,84 @@
 import React, { useState } from 'react';
-import "./AddImages.css"
+import './AddImages.css';
 
-function ProductImages() {
-  const [images, setImages] = useState([
-    { id: 1, src: 'image1.jpg' }, // Replace with actual image paths
-    { id: 2, src: 'image2.jpg' },
-    { id: 3, src: 'image3.jpg' },
-  ]);
+function AddImages({ onImageChange }) {
+    const [images, setImages] = useState([]);
+    const [error, setError] = useState('');
 
-  const handleUpload = (e) => {
-    const file = e.target.files[0];
-    const newImage = { id: Date.now(), src: URL.createObjectURL(file) };
-    setImages((prevImages) => [...prevImages, newImage]);
-  };
+    // Triggered when the file input changes
+    const handleImageUpload = (event) => {
+        const newImages = Array.from(event.target.files);
 
-  const handleReplace = (id) => {
-    // Logic to replace an image based on its ID
-  };
+        // Clear error and add new images if under the limit
+        setError('');
+        const imageURLs = newImages.map(file => URL.createObjectURL(file));
+        setImages([...images, ...imageURLs].slice(0, 3)); // Ensures a max of 3 images
+        
+    };
 
-  const handleRemove = (id) => {
-    setImages((prevImages) => prevImages.filter((image) => image.id !== id));
-  };
+    // Handles the "Click to upload" action
+    const handleClickToUpload = () => {
+        if (images.length >= 3) {
+            setError('You can only upload up to 3 images.');
+        } else {
+            document.getElementById('fileInput').click();
+        }
+    };
 
-  return (    
-    <>
-        <div className="upload-box">
-            <label htmlFor="upload-input">
-            <span>Click to upload or drag and drop</span>
-            </label>
-            <input
-            id="upload-input"
-            type="file"
-            onChange={handleUpload}
-            style={{ display: 'none' }}
-            />
-        </div>
-        <div className="image-thumbnails">
-            {images.map((image) => (
-                <div key={image.id} className="thumbnail">
-                    <img src={image.src} alt="Product" />
-                    <div className="overlay">
-                    <button onClick={() => handleReplace(image.id)}>Replace</button>
-                    <button onClick={() => handleRemove(image.id)}>Remove</button>
+
+    // Replaces an existing image
+    const replaceImage = (index) => {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const newImages = [...images];
+                newImages[index] = URL.createObjectURL(file);
+                setImages(newImages);
+            }
+        };
+        fileInput.click();
+    };
+
+    // Removes an image
+    const removeImage = (index) => {
+        const newImages = images.filter((_, i) => i !== index);
+        setImages(newImages);
+        setError(''); // Clear error if any
+    };
+
+    return (
+        <div className="image-upload-container">
+            <div className="upload-box" onClick={handleClickToUpload}>
+                <span>Click to upload</span>
+            </div>
+
+            <div className="image-list">
+                {images.map((src, index) => (
+                    <div key={index} className="image-wrapper">
+                        <img src={src} alt={`Uploaded ${index + 1}`} />
+                        <div className="overlay">
+                            <button onClick={() => replaceImage(index)}>Replace</button>
+                            <button onClick={() => removeImage(index)}>Remove</button>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+
+            <input
+                id="fileInput"
+                type="file"
+                style={{ display: 'none' }}
+                multiple
+                accept="image/*"
+                onChange={handleImageUpload}
+            />
+            <br />
+            <div>{error && <p className="error-message">{error}</p>}</div>
         </div>
-    </>
-  );
+    );
 }
 
-export default ProductImages;
+export default AddImages;

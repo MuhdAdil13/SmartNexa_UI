@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
-import "./CategoryBrandDropdown.css"
+import "./CategoryBrandDropdown.css";
 
-const CategoryBrandDropdown = () => {
+const CategoryBrandDropdown = ({onCategoryChange, onBrandChange}) => {
   const [selectedCategory, setSelectedCategory] = useState();
   const [selectedBrand,setSelectedBrand]=useState();
 
   // categories and brand options
   const categories = ['Select Category','Smart Light', 'Thermostats', 'AI Assistant', 'Smart Lock'];
   const brands = ['Select Brand','Havells','Wipro','Panasonic','Amazon'];
-  // Handle dropdown change
+  // Handle category dropdown change
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
+    if (onCategoryChange){
+      onCategoryChange(event.target.value); // call parent function
+    }
   };
 
+  //Handle brand dropdown change
   const handleBrandChange = (event) =>{
     setSelectedBrand(event.target.value);
-  }
+    if (onBrandChange){
+      onBrandChange(event.target.value); // call parent function
+    }
+  };
+
   return (
     <>
     <div className="category-dropdown">
