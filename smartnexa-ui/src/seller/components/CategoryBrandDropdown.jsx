@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./CategoryBrandDropdown.css";
+import "./css/CategoryBrandDropdown.css";
 
 const CategoryBrandDropdown = ({onCategoryChange, onBrandChange}) => {
   const [selectedCategory, setSelectedCategory] = useState();

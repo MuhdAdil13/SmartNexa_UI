@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Range } from "react-range";
-import "./PriceRangeFilter.css";
+import "./css/PriceRangeFilter.css";
 
 const PriceRangeFilter = () => {
     const [priceRange, setPriceRange] = useState([0, 0]);

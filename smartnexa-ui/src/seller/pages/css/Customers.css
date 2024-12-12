@@ -30,3 +30,71 @@
 .add-customer-btn:hover{
     transform: translateY(-0.5px);
 }
+
+.customer-search-box{
+    position: relative;
+}
+
+.customer-search-box input{
+    padding: 6px 10px 7px 40px;
+    border: 1px solid #d4d6da;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+
+.customer-search-box input::placeholder{
+    font-size: 14px;
+    color: #a4a7ac;
+}
+
+.customer-search-box input:focus{
+    outline: none;
+}
+
+.customer-search-box i>img{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+.customer-name-hover:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sort-filter-card{
+    height: 38.88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sort-card,.filter-card{
+    font-size: 0.9rem;
+    border: 1px solid #a4a7ac;
+    padding: 6px 10px 7px 10px ;
+    border-radius: 5px;
+}
+.action-btn-card{
+    display: flex;
+    gap: 10px;
+}
+
+.pencil-icon{
+    border: 1px solid #007bff;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.delete-icon{
+    border: 1px solid red;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}

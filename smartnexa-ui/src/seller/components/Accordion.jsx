@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./Accordion.css"
+import "./css/Accordion.css"
 import PropTypes from 'prop-types';
 
 const Accordion = ({title, items, id, isRating, defaultOpen}) => {

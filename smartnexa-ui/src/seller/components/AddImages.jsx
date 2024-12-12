@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddImages.css';
+import './css/AddImages.css';
 
 function AddImages({ onImageChange }) {
     const [images, setImages] = useState([]);

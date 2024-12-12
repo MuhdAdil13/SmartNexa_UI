@@ -1,5 +1,5 @@
 import React from 'react'
-import "./SidebarMenu.css"
+import "./css/SidebarMenu.css"
 import { NavLink } from "react-router-dom";
 import DashIcon from "./icons/dashboard.svg"
 import ProductIcon from "./icons/product.svg"
@@ -40,7 +40,7 @@ const SidebarMenu = () => {
                                 <NavLink to="analytics" className={({ isActive }) => isActive ? "active" : ""}>Analytics</NavLink>
                             </div>
                             <div className="icon_box">
-                                <img src={MessagesIcon} alt="Messages Icon" width={21} height={21}/>
+                                <img src={MessagesIcon} alt="Messages Icon" width={17} height={17}/>
                                 <NavLink to="messages" className={({ isActive }) => isActive ? "active" : ""}>Messages</NavLink>
                             </div>
                         </div>

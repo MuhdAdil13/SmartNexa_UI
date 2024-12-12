@@ -6,6 +6,7 @@ import Products from '../pages/Products';
 import Overview from '../pages/Overview';
 import Orders from '../pages/Orders';
 import Customers from '../pages/Customers';
+import CustomerDetails from '../pages/CustomerDetails';
 import Messages from '../pages/Messages';
 import Analytics from '../pages/Analytics';
 import Settings from '../pages/Settings';
@@ -27,6 +28,7 @@ const Dashboard = () => {
                     <Route path="add-products" element={<AddProducts />} />
                     <Route path="orders" element={<Orders />} />
                     <Route path="customers" element={<Customers />} />
+                    <Route path="customer-details" element={<CustomerDetails />} />
                     <Route path="analytics" element={<Analytics />} />
                     <Route path="messages" element={<Messages />} />
                     <Route path="settings" element={<Settings />} />

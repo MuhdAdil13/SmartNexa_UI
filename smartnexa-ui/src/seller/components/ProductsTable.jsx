@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./ProductTable.css"
+import "./css/ProductTable.css"
 
 const ProductsTable = () => {
     const ProductId=['SN2001','SN2002','SN2003','SN2004','SN2005']
